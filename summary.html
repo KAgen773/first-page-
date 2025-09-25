@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Experience of Creating This Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      line-height: 1.6;
+      background-image:url(icon.webp);
+      color:#fbff00;
+    }
+
+    h2 {
+      text-align: center;
+      color: D 86375px;
+    }
+
+    h1{
+      text-align: center;
+      color: #00fff7;
+      text-shadow: 0 0 10px #000000, 0 0 20px #ffdd00;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    /* Home Button */
+    .home-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #333;
+      color: #eaff00;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    .home-btn:hover {
+      background: #ffc00f;
+      color: #000;
+    }
+
+    /* Container for layout */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 80px; /* space for fixed home button */
+      flex-wrap: wrap;
+    }
+
+    /* Table styling */
+    .table {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 60%;
+      border: 1px solid #ffffff;
+      margin-left: auto;
+      margin-right: auto;
+      color: D86375PX;
+    }
+
+    td, th {
+      border: 1px solid #fdfdfd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      text-align: center;
+      background-color: #1a778b00;
+    }
+
+    tr:nth-child(even) {
+      background-color: #4d004d;
+    }
+
+    /* List styling */
+    ul {
+      list-style: none;
+      padding-left: 0;
+      width: 35%;
+    }
+
+    ul li::before {
+      content: "✔ ";
+      color: #f7f2f2;
+    }
+
+    ul li {
+      transition: transform 0.2s, color 0.2s;
+    }
+
+    ul li:hover {
+      transform: scale(1.05);
+      color: #fff5f5;
+    }
+
+    /* Closing note */
+    .closing {
+      margin-top: 30px;
+      font-style: italic;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .table, ul {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>   🌟 My Journey Creating the Website</h1>
+  <a href="front.page.html" class="home-btn">🏠 Home</a>
+
+  <div class="container">
+    <!-- Left: List of activities -->
+    <ul>
+      <li>Thursday: Started drafting the kind of output I wanted.</li>
+      <li>Thursday: Read through all the code and functions to understand the structure.</li>
+      <li>Friday–Saturday: Began creating the biodata page using the knowledge I had gained.</li>
+      <li>Friday–Saturday: Took more than one day because I needed to learn new code and how to apply it.</li>
+      <li>Friday–Saturday: Spent two days learning and building this page.</li>
+      <li>Saturday Night–Monday Night: Started working on the next page Saturday night.</li>
+      <li>Saturday Night–Monday Night: Continued editing and improving it through Sunday and Monday night.</li>
+      <li>Tuesday: Created my homepage.</li>
+      <li>Tuesday: Learned a lot from examples, including how to add GIFs.</li>
+      <li>Final Step: Created a summary to share my experience building the website.</li>
+      <li>Final Step: Expressed how I felt and what I learned using HTML and CSS.</li>
+    </ul>
+
+    <!-- Right: Table -->
+    <table class="table">
+      <tr>
+        <th scope="col">First Day</th>
+        <th scope="col">Content I Learned</th>
+        <th scope="col">The Reaction</th>
+      </tr>
+      <tr>
+        <td scope="row">Thursday</td>
+        <td>Drafting output</td>
+        <td>Happy</td>
+      </tr>
+      <tr>
+        <td scope="row">Friday</td>
+        <td>Read all the code and functions</td>
+        <td>Confused</td>
+      </tr>
+      <tr>
+        <td scope="row">Saturday</td>
+        <td>Create biodata page</td>
+        <td>Tired</td>
+      </tr>
+      <tr>
+        <td scope="row">Sunday</td>
+        <td>Edit and improve the page</td>
+        <td>Happy</td>
+      </tr>
+      <tr>
+        <td scope="row">Monday</td>
+        <td>Edit and improve the page</td>
+        <td>Exhausted</td>
+      </tr>
+      <tr>
+        <td scope="row">Tuesday</td>
+        <td>Create homepage</td>
+        <td>Excited</td>
+      </tr>
+      <tr>
+        <td scope="row">Wednesday</td>
+        <td>Create summary page</td>
+        <td>Proud, tired, sad</td>
+      </tr>
+    </table>
+  </div>
+
+  <p class="closing">💬 Closing Note:  
+  This is all from me and my website. Thank you for visiting and seeing my work!</p>
+
+</body>
+</html>

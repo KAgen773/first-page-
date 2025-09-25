@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time Management</title>
+    <style>
+        body {
+            background-image: url(PROJECT.jpg);
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            transform: scale(0.9);   /* 90% zoom */
+            transform-origin: top center;
+        }
+
+        h1 {
+            color: rgb(238, 175, 15);
+            font-size: 50px;
+            margin-top: 10px;
+            text-shadow: 2px 2px 6px rgb(215, 215, 215);
+            display: inline-block;
+            animation: blink 1s step-start infinite, glow 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        @keyframes glow {
+            0%, 100% { 
+                color: rgb(255, 0, 4); 
+                text-shadow: 0 0 20px rgb(255, 0, 0); 
+            }
+            50% { 
+                color: #ff0000; 
+                text-shadow: 0 0 25px #000000; 
+            }
+        }
+
+        /* "What is that ????" styling */
+        .center-text {
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin: 15px 0;
+            background-color: rgb(242, 199, 4);
+            color: rgb(0, 0, 0);
+            text-shadow: 2px 2px 6px rgba(255, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .statement {
+            font-size: 22px;
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px auto;
+            max-width: 800px;
+            line-height: 1.4;
+            padding: 20px;
+            border-left: 6px solid #ffffff;
+            background-color: #ffffffcc;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Motivation box */
+        .motivation-box {
+            display: inline-block;
+            padding: 20px 40px;
+            margin: 30px 0;
+            font-size: 30px;
+            font-weight: bold;
+            color: #006600;
+            background: #e6ffe6;
+            border: 3px solid rgb(0, 255, 4);
+            border-radius: 50px;
+            text-shadow: 1px 1px 5px rgb(10, 253, 152);
+            box-shadow: 0 0 0px rgba(4, 255, 0, 0.6);
+            animation: pulseBox 1.5s infinite alternate;
+        }
+
+        @keyframes pulseBox {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(26, 243, 26, 0.6);
+                background: #26ea07f1;
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 40px rgba(0, 255, 0, 0.4);
+                background: #3bbf31a0;
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(9, 15, 9, 0.3);
+                background: #e6ffe6;
+            }
+        }
+
+        .bubble-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .bubble {
+            position: relative;
+            display: inline-block;
+            background: #fff;
+            color: #000;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+            max-width: 200px;
+        }
+
+        .bubble::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 20px 15px 0;
+            border-style: solid;
+            border-color: #fff transparent transparent transparent;
+        }
+
+        /* Explanation boxes (3 in a row) */
+        .explain-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px auto;
+            max-width: 900px;
+        }
+
+        .explain-box {
+            flex: 1;
+            padding: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+            background: #ffffffcc;
+            border-radius: 10px;
+            box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Square box styling */
+        .square-box {
+            display: inline-block;
+            padding: 20px;
+            margin: 20px auto;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            border: 3px solid #fcfcfc;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+
+            /* Animation */
+            opacity: 0;
+            transform: scale(0.5);
+            animation: appearBox 1.5s ease forwards;
+        }
+
+        .square-box:nth-of-type(2) {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes appearBox {
+            0% { opacity: 0; transform: scale(0.5); }
+            60% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: orange;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background: yellow;
+            transform: scale(1.05);
+        }
+
+        /* ===================== ANALOG CLOCK ===================== */
+        .clock {
+            width: 200px;
+            height: 200px;
+            border: 8px solid black;
+            border-radius: 50%;
+            position: relative;
+            background: white;
+            margin: 30px auto;
+        }
+
+        .center {
+            width: 12px;
+            height: 12px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .hand {
+            width: 50%;
+            height: 4px;
+            background: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: left;
+        }
+
+        .hour {
+            height: 6px;
+            background: #333;
+            width: 35%;
+            animation: rotateHour 43200s linear infinite; /* 12 hours */
+        }
+
+        .minute {
+            height: 4px;
+            background: #555;
+            width: 45%;
+            animation: rotateMinute 3600s linear infinite; /* 1 hour */
+        }
+
+        .second {
+            height: 2px;
+            background: red;
+            width: 48%;
+            animation: rotateSecond 60s linear infinite; /* 1 minute */
+        }
+
+        @keyframes rotateHour {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes rotateMinute {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes rotateSecond {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>TIME MANAGEMENT</h1>
+
+    <!-- Analog Clock -->
+    <div class="clock">
+        <div class="hand hour"></div>
+        <div class="hand minute"></div>
+        <div class="hand second"></div>
+        <div class="center"></div>
+    </div>
+    
+    <p class="center-text">??? What is that ????</p>
+
+    <img src="time.jpg" alt="time management image" style="width:60%; max-width:500px; border-radius:10px; box-shadow:0px 0px 10px rgb(100, 100, 100);">
+
+    <div>
+        <p class="statement">
+            Many young adults are losing their jobs due to poor time management. 
+            Struggles with daily routines—such as waking up late and failing to plan—reduce productivity and raise doubts about their discipline and reliability in the workplace.
+        </p>
+    </div>
+
+    <p class="motivation-box">LET'S BREAK IT !!!!!</p>
+
+    <div class="bubble-row">
+        <div class="bubble">PLAN YOUR DAY</div>
+        <div class="bubble">BUILD YOUR ROUTINE</div>
+        <div class="bubble">KNOW YOUR PRIORITIES</div>
+    </div>
+
+    <div class="explain-row">
+        <div class="explain-box">YOU CAN END THE DAY AS YOU EXPECT, AND YOUR TASKS WILL BE DONE ON TIME.</div>
+        <div class="explain-box">You won’t miss any of your daily tasks so that you can do what you enjoy 😊😊</div>
+        <div class="explain-box">You won’t waste your time on unimportant things.</div>
+    </div>
+
+    <div class="square-box">THE END OF THE TOPIC</div>
+    <div class="square-box">In a rapidly evolving world, time waits for no one. It is essential that young people stay informed, proactive, and ready to shape their future. By valuing time and embracing progress, we can unlock the full potential of our youth.
+    The government must play a key role in creating systems that support this growth through education and innovation. Let us move forward together toward a nation that respects time, empowers its youth, and builds a future we can all be proud of.
+    </div>
+
+    <a href="https://youtu.be/U5HvuKEjH6g?si=mRFS0tsWywID3moq" target="_blank" class="button"> Let’s adopt his discipline in managing time wisely to bright our future click!!!!🧠⏱️</a>   
+
+</body>
+</html>

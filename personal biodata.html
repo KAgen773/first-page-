@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+  padding: 10px; /* fixed: added px */
+  font-family: 'Times New Roman', Times, serif;
+  color: #0b0b0b;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full viewport height */
+  background-color: #000; /* fallback if image fails */
+}
+
+/* Home button box (top-left corner) */
+.home-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #ffffffcc;
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+.background-container {
+  width: 600px;       /* portrait width */
+  height: 900px;      /* portrait height */
+  background-image: url("secound image.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: rotate(0.5deg); /* subtle 0.5 degree tilt */
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+}
+
+h1 {
+  color: rgb(244, 5, 200);
+  font-size: 50px;
+  margin-top: 30px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  display: inline-block;
+  animation: wave 2s ease-in-out infinite, glow 2s ease-in-out infinite;
+}
+
+/* Rotation wave animation */
+@keyframes wave {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+/* Glow animation */
+@keyframes glow {
+  0%, 100% { color: rgb(244, 5, 200); text-shadow: 0 0 5px rgb(244, 5, 200); }
+  50% { color: #ffcc00; text-shadow: 0 0 20px #ffcc00; }
+}
+
+.container {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center; 
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.container img {
+  width: auto;
+  height: auto;
+  max-height: 500px;
+  margin-right: 20px; 
+  border-radius: 30px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.3);
+  object-fit: cover;
+}
+
+/* Compact text with word wrapping */
+.text {
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  max-width: 320px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Proper list style */
+.text ul {
+  list-style-type: "✿ ";  /* custom black flower bullet */
+  padding-left: 20px;
+  margin: 0;
+}
+
+.text li {
+  margin-bottom: 5px;
+}
+
+.text li ul {
+  list-style-type: "❀ "; /* white flower for nested list */
+  padding-left: 20px;
+}
+
+.text li ul li {
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+</style>
+</head>
+<body>
+  
+<div class="background-container">
+  <h1>Biography</h1>
+
+  <!-- Home button in box -->
+  <a href="front.page.html" class="home-btn">Home</a>
+
+  <div class="container">
+    <img src="biodata .jpg" alt="Image">
+    
+    <div class="text">
+      <ul>
+        <li>My name is Sri kagendran  a/l  Chandrn, and  I am currently a first-year foundation student at Multimedia University, majoring in Information Technology.</li>
+        <li>This semester marks the beginning of my academic journey, and I am excited to explore new subjects, develop essential skills, and grow both personally and professionally.</li>
+        <li>I am passionate about studying Applied Artificial Intelligence and aspire to become an AI specialist.</li>
+        <li>I enjoy working on projects that challenge me to think critically and creatively.</li>
+        <li>Through this foundation program, I aim to build a strong academic base that will prepare me for my degree studies and future career.</li>
+        <li>Skills I am interested in learning include:
+          <ul>
+            <li>Programming fundamentals (Python and Java)</li>
+            <li>Problem-solving and logical thinking</li>
+            <li>Familiarity with AI concepts and emerging technologies</li>
+          </ul>
+        </li>
+        <li>Outside of academics, I enjoy playing badminton and chess.</li>
+        <li>I also like reading books and staying updated with current global news, which helps me stay balanced and inspired.</li>
+        <li>I look forward to learning, collaborating, and making the most of this university experience.</li>
+      </ul>
+    </div>
+  </div>  
+</div>
+
+</body>
+</html>
